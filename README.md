@@ -11,40 +11,60 @@ Paula Katalina Daza Fuentes – 1202701
 
 🎯 1. Objetivo General
 
-Desarrollar una plataforma web educativa que permita a los niños aprender a administrar el dinero mediante el uso de un monedero virtual y metas de ahorro, con el fin de fomentar hábitos financieros responsables desde temprana edad. El sistema busca solucionar la falta de herramientas educativas interactivas que enseñen a los niños conceptos básicos como el ahorro, el control de gastos y la organización del dinero de forma segura y fácil de entender.
+Desarrollar un e-commerse especializado en videojuegos, el cual permitirá la comercialización de juegos digitales.
+
+Este e-commerse tiene como objetivo optimizar el proceso de compra en línea y garantizar una experiencia segura, rápida e intuitiva para el usuario. 
 
 🌍 2. Contexto de Uso
 
 ¿Quién va a usar el sistema?
 
-- Niños entre 8 y 12 años (usuario principal)
-- Padre o madre (responsable del registro)
+Este e-commerce será utilizado en un entorno web por clientes interesados en adquirir juegos digitales desde cualquier dispositivo con conexión a internet (computador, Tablet o smartphone).
 
-¿Cómo se va a utilizar el sistema?
+Está dirigido a:
+-Clientes que buscan comprar juegos digitales, evitando el procedmiento usual para uno fisico.
+-Administradores encargados de actualizar inventario, precios y promociones.
 
-El sistema se utilizará desde un computador, tablet o celular con acceso a internet. El padre o madre registrará la cuenta del niño, y el niño podrá ingresar al sistema para registrar dinero, ver su saldo, crear metas de ahorro y visualizar su progreso de forma interactiva.
+
+El entorno de uso exige:
+-Seguridad en el manejo de datos personales y financieros.
+-Actualización constante de stock y precios.
+-Presentación clara de especificaciones técnicas.
+
+Solución propuesta
+Módulos funcionales:
+
+-Módulo de catalogo.
+-Módulo de detalle del producto. 
+-Módulo de carrito de compras.
+-Modulo de biblioteca.
+-Módulo de pagos y seguridad.
+
 
 📋 3. Requerimientos del Sistema
 3.1 Requerimientos Funcionales
 
-RF01: El sistema debe permitir registrar usuarios.
-RF02: El sistema debe permitir iniciar sesión.
-RF03: El sistema debe permitir crear el perfil del niño.
-RF04: El sistema debe permitir registrar ingresos de dinero.
-RF05: El sistema debe permitir registrar gastos de dinero.
-RF06: El sistema debe mostrar el saldo actual del usuario.
-RF07: El sistema debe permitir crear metas de ahorro.
-RF08: El sistema debe mostrar el progreso de las metas de ahorro.
-RF09: El sistema debe mostrar el historial de movimientos.
-RF10: El sistema debe mostrar recompensas o logros obtenidos.
+RF-01: El sistema debe permitir al usuario registrarse mediante correo electrónico y contraseña.
+RF-02: El sistema debe permitir al usuario iniciar sesión.
+RF-03: El sistema debe mostrar un catálogo de productos disponibles.
+RF-04: El sistema debe permitir buscar productos por nombre o palabra clave.
+RF-05: El sistema debe permitir visualizar el detalle completo de un producto.
+RF-06: El sistema debe permitir agregar productos al carrito de compras.
+RF-07: El sistema debe permitir eliminar productos del carrito.
+RF-08: El sistema debe permitir iniciar el proceso de compra (checkout).
+RF-09: El sistema debe permitir seleccionar un método de pago (simulado).
+RF-10: El sistema debe permitir confirmar la compra.
+RF-11: El sistema debe permitir que se vean los podructos comprados en la biblioteca.
+
 
 3.2 Requerimientos No Funcionales
 
 RNF01: La página debe ser responsive y funcionar en celular, tablet y computador.
-RNF02: La interfaz debe ser amigable y fácil de usar para niños.
+RNF02: La interfaz debe ser amigable y fácil de usar.
 RNF03: El sistema debe cargar rápidamente.
 RNF04: El sistema debe proteger la información del usuario.
-RNF05: El sistema debe tener una interfaz visual con iconos y colores amigables.
+RNF05: El sistema debe tener una interfaz visual con iconos.
+RNF06: El sistema debe usar una base de datos relacional para almacenar usuarios y productos.
 
 🧠 4. Diagramas UML
 
