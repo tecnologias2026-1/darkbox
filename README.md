@@ -1,13 +1,8 @@
-Para Completar por grupo
-
-🌐 Kiddo Finance – Plataforma Web de Educación Financiera para Niños
-
-Kiddo Finance es una plataforma web educativa que permite a los niños aprender a administrar el dinero mediante un monedero virtual, registro de ingresos y gastos, y metas de ahorro. El sistema utiliza elementos visuales e interactivos para enseñar hábitos financieros básicos de forma sencilla, segura y divertida
+🌐 Darkbox – E-commerse especializado en videojuegos
 
 👥 Integrantes
 
-Maria Paula Suarez Bastias – 1202689
-Paula Katalina Daza Fuentes – 1202701
+Jorge Andres Gutierrez Suarez - 1202731
 
 🎯 1. Objetivo General
 
