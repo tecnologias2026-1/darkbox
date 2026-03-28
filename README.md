@@ -40,25 +40,40 @@ Módulos funcionales:
 3.1 Requerimientos Funcionales
 
 RF-01: El sistema debe permitir al usuario registrarse mediante correo electrónico y contraseña.
+
 RF-02: El sistema debe permitir al usuario iniciar sesión.
+
 RF-03: El sistema debe mostrar un catálogo de productos disponibles.
+
 RF-04: El sistema debe permitir buscar productos por nombre o palabra clave.
+
 RF-05: El sistema debe permitir visualizar el detalle completo de un producto.
+
 RF-06: El sistema debe permitir agregar productos al carrito de compras.
+
 RF-07: El sistema debe permitir eliminar productos del carrito.
+
 RF-08: El sistema debe permitir iniciar el proceso de compra (checkout).
+
 RF-09: El sistema debe permitir seleccionar un método de pago (simulado).
+
 RF-10: El sistema debe permitir confirmar la compra.
+
 RF-11: El sistema debe permitir que se vean los podructos comprados en la biblioteca.
 
 
 3.2 Requerimientos No Funcionales
 
 RNF01: La página debe ser responsive y funcionar en celular, tablet y computador.
+
 RNF02: La interfaz debe ser amigable y fácil de usar.
+
 RNF03: El sistema debe cargar rápidamente.
+
 RNF04: El sistema debe proteger la información del usuario.
+
 RNF05: El sistema debe tener una interfaz visual con iconos.
+
 RNF06: El sistema debe usar una base de datos relacional para almacenar usuarios y productos.
 
 🧠 4. Diagramas UML
