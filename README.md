@@ -3,6 +3,7 @@
 👥 Integrantes
 
 Jorge Andres Gutierrez Suarez - 1202731
+David Espiti Velásquez - 1202510
 
 🎯 1. Objetivo General
 
