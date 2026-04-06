@@ -1,197 +1,202 @@
-🌐 Darkbox – E-commerse especializado en videojuegos
+🌐 DARKBOX – E-commerce especializado en videojuegos
 
 👥 Integrantes
 
-Jorge Andres Gutierrez Suarez - 1202731
-David Espitia Velásquez - 1202510
+Jorge Andrés Gutiérrez Suárez – 1202731
+David Espitia Velásquez – 1202510
 
-🎯 1. Objetivo General
+1. Objetivo General
 
-Desarrollar un e-commerse especializado en videojuegos, el cual permitirá la comercialización de juegos digitales.
+Desarrollar una plataforma web tipo e-commerce especializada en la compra y venta de videojuegos, que permita a los usuarios publicar, buscar y adquirir productos de manera segura, rápida e intuitiva.
 
-Este e-commerse tiene como objetivo optimizar el proceso de compra en línea y garantizar una experiencia segura, rápida e intuitiva para el usuario. 
+El sistema busca optimizar el proceso de comercialización digital dentro del contexto local, brindando herramientas como filtros de búsqueda, mensajería interna y sistema de reputación.
 
-🌍 2. Contexto de Uso
+2. Contexto de Uso
 
-¿Quién va a usar el sistema?
+### ¿Quién usa el sistema?
 
-Este e-commerce será utilizado en un entorno web por clientes interesados en adquirir juegos digitales desde cualquier dispositivo con conexión a internet (computador, Tablet o smartphone).
+La plataforma será utilizada por:
 
-Está dirigido a:
--Clientes que buscan comprar juegos digitales, evitando el procedmiento usual para uno fisico.
--Administradores encargados de actualizar inventario, precios y promociones.
+-Usuarios compradores: Personas interesadas en adquirir videojuegos físicos o digitales.
+-Usuarios vendedores: Personas que desean publicar y vender videojuegos.
+-Administrador: Encargado de moderar contenido y gestionar usuarios.
 
+Entorno de uso
 
-El entorno de uso exige:
--Seguridad en el manejo de datos personales y financieros.
--Actualización constante de stock y precios.
--Presentación clara de especificaciones técnicas.
+### El sistema funcionará en:
 
-Solución propuesta
-Módulos funcionales:
+-Navegadores web
+-Dispositivos: computador, tablet y smartphone
+-Requiere conexión a internet
 
--Módulo de catalogo.
--Módulo de detalle del producto. 
--Módulo de carrito de compras.
--Modulo de biblioteca.
--Módulo de pagos y seguridad.
+### Requisitos del entorno
 
+-Seguridad en autenticación y datos
+-Interfaz intuitiva
+-Disponibilidad 24/7
+-Tiempo de respuesta rápido
 
-📋 3. Requerimientos del Sistema
-3.1 Requerimientos Funcionales
+### Módulos funcionales
 
-RF-01: El sistema debe permitir al usuario registrarse mediante correo electrónico y contraseña.
+-Módulo de registro e inicio de sesión
+-Módulo de publicación de videojuegos
+-Módulo de búsqueda y filtrado
+-Módulo de mensajería interna
+-Módulo de reputación
+-Módulo administrativo
 
-RF-02: El sistema debe permitir al usuario iniciar sesión.
+---
 
-RF-03: El sistema debe mostrar un catálogo de productos disponibles.
+## 3. Requerimientos del Sistema
 
-RF-04: El sistema debe permitir buscar productos por nombre o palabra clave.
+### 3.1 Requerimientos Funcionales
 
-RF-05: El sistema debe permitir visualizar el detalle completo de un producto.
+-RF-01: El sistema debe permitir el registro de usuario mediante correo electrónico y contraseña.
+-RF-02: El sistema debe permitir iniciar sesión.
+-RF-03: El sistema debe permitir publicar videojuegos.
+-RF-04: El sistema debe permitir buscar videojuegos.
+-RF-05: El sistema debe permitir filtrar por consola, precio y estado.
+-RF-06: El sistema debe permitir visualizar el detalle del producto.
+-RF-07: El sistema debe permitir enviar mensajes entre usuarios.
+-RF-08: El sistema debe permitir realizar el proceso de compra.
+-RF-09: El sistema debe permitir calificar usuarios.
+-RF-10: El sistema debe permitir gestionar el perfil.
+-RF-11: El sistema debe permitir la administración de usuarios y publicaciones.
 
-RF-06: El sistema debe permitir agregar productos al carrito de compras.
+---
 
-RF-07: El sistema debe permitir eliminar productos del carrito.
+### 3.2 Requerimientos No Funcionales
 
-RF-08: El sistema debe permitir iniciar el proceso de compra (checkout).
+-RNF-01: El sistema debe estar disponible 24/7.
+-RNF-02: El tiempo de respuesta debe ser menor a 3 segundos.
+-RNF-03: El sistema debe ser responsive.
+-RNF-04: El sistema debe garantizar la seguridad de los datos.
+-RNF-05: La interfaz debe ser intuitiva.
+-RNF-06: El sistema debe ser escalable.
 
-RF-09: El sistema debe permitir seleccionar un método de pago (simulado).
+---
 
-RF-10: El sistema debe permitir confirmar la compra.
+##  4. Diagramas UML
 
-RF-11: El sistema debe permitir que se vean los podructos comprados en la biblioteca.
+###  Diagrama de Casos de Uso
 
+Este diagrama representa la interacción entre los actores del sistema (usuario y administrador) y las funcionalidades principales, como registro, inicio de sesión, publicación de videojuegos, búsqueda, compra, mensajería y calificación.
 
-3.2 Requerimientos No Funcionales
+---
 
-RNF01: La página debe ser responsive y funcionar en celular, tablet y computador.
+###  Diagrama de Secuencia
 
-RNF02: La interfaz debe ser amigable y fácil de usar.
+Este diagrama muestra el proceso de compra de un videojuego:
 
-RNF03: El sistema debe cargar rápidamente.
+1. El usuario busca un videojuego
+2. El sistema consulta la base de datos
+3. El usuario selecciona un producto
+4. El sistema registra la transacción
+5. El usuario califica la compra
 
-RNF04: El sistema debe proteger la información del usuario.
+---
 
-RNF05: El sistema debe tener una interfaz visual con iconos.
-
-RNF06: El sistema debe usar una base de datos relacional para almacenar usuarios y productos.
-
-🧠 4. Diagramas UML
-
-Diagrama de Casos de Uso
-
-<img width="1534" height="732" alt="image" src="https://github.com/user-attachments/assets/fc91e56a-26f9-449b-8468-a09adc51e6f6" />
-
-Este diagrama muestra las interacciones entre el usuario (niño o padre/madre) y el sistema. Permite visualizar las principales funciones del sistema, como registrarse, iniciar sesión, registrar ingresos y gastos, crear metas de ahorro y ver el progreso financiero.
-
-Diagrama de Secuencia
-
-<img width="1524" height="733" alt="image" src="https://github.com/user-attachments/assets/d521a1ce-7380-4ca0-8ac7-608e50263ae7" />
-
-Este diagrama muestra el proceso que ocurre cuando el usuario registra un ingreso o gasto. Representa la interacción entre el usuario, la interfaz web y la base de datos, mostrando cómo se guarda la información y se actualiza el saldo.
-
-🎨 5. URL del Prototipo
+##  5. Prototipo
 
 Colocar aquí el enlace público de Figma:
+
 https://www.figma.com/make/hnhFjeeFNXSH2zgtuYpCka/Colorful-Kids-Finance-Page?t=15g4YsdyFJH8shao-1
 
-🗄️ 6. Diseño de Base de Datos
+---
 
-<img width="1291" height="821" alt="image" src="https://github.com/user-attachments/assets/46b28d79-cd3a-47f9-9590-0a3a726ae7d5" />
+##  6. Diseño de Base de Datos
 
-Tablas principales
-1. Tabla: Role (enum)
-Qué es: Define los tipos de usuario del sistema.
-Campos:
-id: identificador único
-email: correo del usuario
-role: tipo de usuario
-Valores posibles:
-KID → Niño
+###  Tablas principales
 
-2. Tabla: User
-Qué es: Guarda la información de la cuenta del usuario.
-Campos:
-id: identificador único del usuario
-email: correo electrónico
-role: tipo de usuario
-Función:
-Permite que el usuario pueda registrarse e iniciar sesión.
+###  Usuario
 
-3. Tabla: KidProfile
-Qué es: Guarda la información del perfil del niño.
-Campos:
-id: identificador del perfil
-email: correo asociado
-role: tipo de usuario
-Función:
-Representa al niño dentro del sistema.
+-id_usuario (PK)
+-nombre
+-correo
+-contraseña
+-reputación
+-fecha_registro
 
-4. Tabla: WalletEntry
-Qué es: Guarda todos los movimientos de dinero del niño.
-Campos:
-id: identificador del movimiento
-kidprofile: referencia al niño
-transactionType: tipo (ingreso o gasto)
-amount: cantidad de dinero
+---
 
-5. Tabla: TransactionType
-Qué es: Define el tipo de movimiento.
-Tipos:
-income → ingreso
-expense → gasto
+###  Videojuego
 
-6. Tabla: SavingGoal
-Qué es: Guarda las metas de ahorro del niño.
-Campos:
-id: identificador de la meta
-kidprofile: niño
-title: nombre de la meta
-targetAmount: cantidad objetivo
-dueDate: fecha límite
+-id_videojuego (PK)
+-titulo
+-consola
+-estado
+-precio
+-descripcion
+-id_usuario (FK)
 
-7. Tabla: Badge
-Qué es: Guarda las recompensas o logros.
-Campos:
-id: identificador
-name: nombre de la recompensa
+---
 
-8. Relación entre las tablas (cómo se conectan)
-Relación principal:
-- User
-↓
-KidProfile
-↓
-WalletEntry
-↓
-TransactionType
+###  Mensaje
 
-- KidProfile
-↓
-SavingGoal
+-id_mensaje (PK)
+-contenido
+-fecha
+-id_emisor (FK)
+-id_receptor (FK)
 
-- KidProfile
-↓
-Badge
+---
 
-🧩 7. Documentación del Sistema
-Estructura de Carpetas
+###  Calificación
 
-/css
-Contiene los archivos de estilos de la página, como colores, diseño, botones y estructura visual.
-/js
-Contiene los archivos JavaScript que controlan la lógica del sistema, como registro, cálculo de saldo y manejo de datos.
-/assets
-Contiene imágenes, iconos y recursos gráficos utilizados en la interfaz.
+-id_calificacion (PK)
+-puntuacion
+-comentario
+-id_comprador (FK)
+-id_vendedor (FK)
 
-Explicar brevemente qué contiene cada carpeta.
+---
 
-🚀 8. Instalación y Ejecución
+###  Transacción
 
-Pasos para ejecutar el proyecto:
-1. Descargar o clonar el proyecto desde el repositorio.
-2. Abrir la carpeta del proyecto.
-3. Abrir el archivo index.html en un navegador web.
-4. Si el sistema utiliza base de datos, configurar la conexión en el archivo correspondiente.
-5. Ejecutar el proyecto en el navegador.
+-id_transaccion (PK)
+-fecha
+-estado
+-id_comprador (FK)
+-id_videojuego (FK)
+
+---
+
+###  Administrador
+
+-id_admin (PK)
+-nombre
+-correo
+
+---
+
+## 🔗 Relaciones
+
+-Un usuario puede publicar múltiples videojuegos
+-Un usuario puede enviar y recibir mensajes
+-Un usuario puede realizar múltiples transacciones
+-Un videojuego pertenece a una transacción
+-Un usuario puede recibir múltiples calificaciones
+-El administrador gestiona usuarios y publicaciones
+
+---
+
+##  7. Documentación del Sistema
+
+###  Estructura de carpetas
+
+-/css → Contiene los estilos visuales del sistema
+-/js → Contiene la lógica del sistema
+-/assets → Contiene imágenes e iconos
+
+---
+
+## 8. Instalación y Ejecución
+
+1. Descargar o clonar el proyecto
+2. Abrir la carpeta del proyecto
+3. Ejecutar el archivo index.html en un navegador
+4. Configurar la base de datos (si aplica)
+5. Usar el sistema desde el navegador
+
+---
+
