@@ -98,10 +98,7 @@ Este diagrama muestra el proceso de compra de un videojuego:
 
 ##  5. Prototipo
 
-Colocar aquí el enlace público de Figma:
-
-https://www.figma.com/make/hnhFjeeFNXSH2zgtuYpCka/Colorful-Kids-Finance-Page?t=15g4YsdyFJH8shao-1
-
+https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?p=f
 ---
 
 ##  6. Diseño de Base de Datos
