@@ -110,9 +110,12 @@ Entorno de uso
 
 Este diagrama representa la interacción entre los actores del sistema (usuario y administrador) y las funcionalidades principales, como registro, inicio de sesión, publicación de videojuegos, búsqueda, compra, mensajería y calificación.
 
----
+---<img width="392" height="925" alt="RTDFRbC_40VmlKynltRpww8e__E2ggX9cY0MI8YgxAVsvCMDdnsDxHQ4UWMkm0tOS0Gkn15uVh6gO7Nx_Sp4CtRUjG_88JP6_1Tsr10S36eh36q310Uiwrq0fPbaqCuAuVVQ7f2nWNkK-vfTj6hbZ6CutymsYytofCBlKBadRMi87Ea4kYxfs1B3e7S2A8FZs_3L" src="https://github.com/user-attachments/assets/7cf37d36-ae11-4028-908f-725abcedf107" />
+
 
 ###  Diagrama de Secuencia
+
+<img width="546" height="625" alt="VPF1RXD138RlynHMEFTGeO340PNDfbmAIAtWximumMHt73opQIJ4K_48l1ZEPaT9sAGvpC7-VlkBhBrB6JLtRUDSMdFSe68B2_JhbKeNmqmQKNXrt_zEYFGTWpnpN47MZauQVSgBHbAudRhJ2FtiA7g2NmxWWwey3yEdyzVJwjQA3xoa1uvKYGRIgzt_vURr_Etz" src="https://github.com/user-attachments/assets/f4285384-f7fd-45f7-afd5-3c710443a4f6" />
 
 Este diagrama muestra el proceso de compra de un videojuego:
 
@@ -122,7 +125,10 @@ Este diagrama muestra el proceso de compra de un videojuego:
 4. El sistema registra la transacción
 5. El usuario califica la compra
 
----
+###  Diagrama de Clases
+
+---<img width="643" height="742" alt="bPA_ZXCn4CPxFuKLwXE941AaG9T4h4HnDFnfJxFsP6_kTktLU1ma48z4mJFSYs67EF4cQQxqvy_V_6R6jq609GwzKk69t0WCWsx1F7NiexCRttlMhvhtpQfPLuxm0DR_8DTfuOZLnVwLyUoGzU9jTM5w264bmjH6mK_6ko_q4_LSdNlqBwNr-eAWQTvydESRpnQv" src="https://github.com/user-attachments/assets/97b22a66-abed-4d3e-b156-60d3f37bbeb1" />
+
 
 ##  5. Prototipo
 
