@@ -18,7 +18,9 @@ El sistema busca optimizar el proceso de comercialización digital dentro del co
 La plataforma será utilizada por:
 
 -Usuarios compradores: Personas interesadas en adquirir videojuegos físicos o digitales.
+
 -Usuarios vendedores: Personas que desean publicar y vender videojuegos.
+
 -Administrador: Encargado de moderar contenido y gestionar usuarios.
 
 Entorno de uso
@@ -26,23 +28,33 @@ Entorno de uso
 ### El sistema funcionará en:
 
 -Navegadores web
+
 -Dispositivos: computador, tablet y smartphone
+
 -Requiere conexión a internet
 
 ### Requisitos del entorno
 
 -Seguridad en autenticación y datos
+
 -Interfaz intuitiva
+
 -Disponibilidad 24/7
+
 -Tiempo de respuesta rápido
 
 ### Módulos funcionales
 
 -Módulo de registro e inicio de sesión
+
 -Módulo de publicación de videojuegos
+
 -Módulo de búsqueda y filtrado
+
 -Módulo de mensajería interna
+
 -Módulo de reputación
+
 -Módulo administrativo
 
 ---
@@ -52,26 +64,42 @@ Entorno de uso
 ### 3.1 Requerimientos Funcionales
 
 -RF-01: El sistema debe permitir el registro de usuario mediante correo electrónico y contraseña.
+
 -RF-02: El sistema debe permitir iniciar sesión.
+
 -RF-03: El sistema debe permitir publicar videojuegos.
+
 -RF-04: El sistema debe permitir buscar videojuegos.
+
 -RF-05: El sistema debe permitir filtrar por consola, precio y estado.
+
 -RF-06: El sistema debe permitir visualizar el detalle del producto.
+
 -RF-07: El sistema debe permitir enviar mensajes entre usuarios.
+
 -RF-08: El sistema debe permitir realizar el proceso de compra.
+
 -RF-09: El sistema debe permitir calificar usuarios.
+
 -RF-10: El sistema debe permitir gestionar el perfil.
+
 -RF-11: El sistema debe permitir la administración de usuarios y publicaciones.
 
 ---
 
 ### 3.2 Requerimientos No Funcionales
 
+
 -RNF-01: El sistema debe estar disponible 24/7.
+
 -RNF-02: El tiempo de respuesta debe ser menor a 3 segundos.
+
 -RNF-03: El sistema debe ser responsive.
+
 -RNF-04: El sistema debe garantizar la seguridad de los datos.
+
 -RNF-05: La interfaz debe ser intuitiva.
+
 -RNF-06: El sistema debe ser escalable.
 
 ---
@@ -108,10 +136,15 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ###  Usuario
 
 -id_usuario (PK)
+
 -nombre
+
 -correo
+
 -contraseña
+
 -reputación
+
 -fecha_registro
 
 ---
@@ -119,11 +152,17 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ###  Videojuego
 
 -id_videojuego (PK)
+
 -titulo
+
 -consola
+
 -estado
+
 -precio
+
 -descripcion
+
 -id_usuario (FK)
 
 ---
@@ -131,9 +170,13 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ###  Mensaje
 
 -id_mensaje (PK)
+
 -contenido
+
 -fecha
+
 -id_emisor (FK)
+
 -id_receptor (FK)
 
 ---
@@ -141,9 +184,13 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ###  Calificación
 
 -id_calificacion (PK)
+
 -puntuacion
+
 -comentario
+
 -id_comprador (FK)
+
 -id_vendedor (FK)
 
 ---
@@ -151,9 +198,13 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ###  Transacción
 
 -id_transaccion (PK)
+
 -fecha
+
 -estado
+
 -id_comprador (FK)
+
 -id_videojuego (FK)
 
 ---
@@ -161,7 +212,9 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ###  Administrador
 
 -id_admin (PK)
+
 -nombre
+
 -correo
 
 ---
@@ -169,10 +222,15 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ## 🔗 Relaciones
 
 -Un usuario puede publicar múltiples videojuegos
+
 -Un usuario puede enviar y recibir mensajes
+
 -Un usuario puede realizar múltiples transacciones
+
 -Un videojuego pertenece a una transacción
+
 -Un usuario puede recibir múltiples calificaciones
+
 -El administrador gestiona usuarios y publicaciones
 
 ---
@@ -182,7 +240,9 @@ https://www.figma.com/make/yEkSc4tGKqrXq5diXWdbuD/E-commerce-tienda-videojuegos?
 ###  Estructura de carpetas
 
 -/css → Contiene los estilos visuales del sistema
+
 -/js → Contiene la lógica del sistema
+
 -/assets → Contiene imágenes e iconos
 
 ---
