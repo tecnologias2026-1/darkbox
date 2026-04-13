@@ -3,6 +3,7 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- HEAD -->
@@ -1031,7 +1032,7 @@
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="login.html">Mi Biblioteca</a></li>
-                        <li><a href="#juegos-momento">Ofertas</a></li>
+                        <li><a href="login.html">Carrito</a></li>
                         <li><a href="#actualizados">Novedades</a></li>
                     </ul>
                 </div>
@@ -1091,18 +1092,33 @@
         }
 
         // Manejar clics en botones "Agregar" del index
-        var botonesAgregar = document.querySelectorAll('.btn-agregar');
-        botonesAgregar.forEach(function(boton) {
-            boton.addEventListener('click', function(e) {
+        // Usar delegación de eventos para capturar clics en botones dinámicos
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('btn-agregar')) {
                 e.preventDefault();
                 e.stopPropagation();
 
                 // Obtener datos del juego desde la tarjeta más cercana
-                var tarjeta = this.closest('.tarjeta');
-                var nombre = tarjeta.querySelector('.nombre').textContent;
-                var genero = tarjeta.querySelector('.genero').textContent;
-                var precio = tarjeta.querySelector('.precio').textContent.replace(/[^0-9]/g, '');
+                var boton = e.target;
+                var tarjeta = boton.closest('.tarjeta');
+
+                if (!tarjeta) {
+                    console.error('No se encontró .tarjeta');
+                    return;
+                }
+
+                var nombre = tarjeta.querySelector('.nombre').textContent.trim();
+                var genero = tarjeta.querySelector('.genero').textContent.trim();
+                var precioText = tarjeta.querySelector('.precio').textContent.trim();
                 var imagen = tarjeta.querySelector('img').src;
+
+                // Extraer precio numérico (saca solo números)
+                var precio = parseInt(precioText.replace(/[^0-9]/g, ''));
+
+                if (!nombre || !precio || !imagen) {
+                    console.error('Datos incompletos:', {nombre, precio, imagen});
+                    return;
+                }
 
                 // Crear ID único basado en el nombre
                 var id = nombre.toLowerCase().replace(/[^a-z0-9]/g, '-');
@@ -1112,19 +1128,23 @@
                     id: id,
                     nombre: nombre,
                     genero: genero,
-                    precio: parseInt(precio),
+                    precio: precio,
                     imagen: imagen
                 };
+
+                console.log('Agregando juego:', juego);
 
                 var agregado = Carrito.agregar(juego);
 
                 if (agregado) {
                     Carrito.notificar('✓ ' + nombre + ' agregado al carrito', 'ok');
+                    console.log('Juego agregado exitosamente');
                 } else {
                     Carrito.notificar('⚠ ' + nombre + ' ya está en el carrito', 'aviso');
+                    console.log('Juego ya estaba en carrito');
                 }
-            });
-        });
+            }
+        }, true); // Usar captura para que sea más fiable
     });
     </script>
 </body>

@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>DARKBOX — Carrito de Compras</title>
@@ -34,8 +35,8 @@
         </div>
  
         <nav>
-            <button>📊 Biblioteca</button>
- 
+            <button onclick="window.location.href='biblioteca.html'">📊 Biblioteca</button>
+
             <!-- Botón carrito con badge de cantidad.
                  El badge (círculo rojo con número) lo actualiza carrito.js
                  al cargar la página y cada vez que se agrega/elimina un juego. -->
@@ -66,10 +67,10 @@
  
 <!-- Menú móvil -->
 <div class="menu-movil">
-    <button>📊 Biblioteca</button>
+    <button onclick="window.location.href='biblioteca.html'">📊 Biblioteca</button>
     <button>🛒 Carrito</button>
     <span>👤 Usuario</span>
-    <a href="home.html" class="btn-salir-movil">↪ Salir</a>
+    <a href="home-sesion.html" class="btn-salir-movil">↪ Salir</a>
 </div>
  
  
@@ -279,7 +280,9 @@ function eliminarJuego(id) {
  
 /* ── INICIALIZAR ─────────────────────────────────────────────── */
 /* Renderizamos el carrito al cargar la página */
-renderizarCarrito();
+document.addEventListener('DOMContentLoaded', function () {
+    renderizarCarrito();
+});
 </script>
  
 </body>

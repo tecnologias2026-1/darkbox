@@ -1,41 +1,42 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>DARKBOX â€” Finalizar Compra</title>
+    <title>DARKBOX – Finalizar Compra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
 
-    <!-- Rutas con ../ porque este archivo estÃ¡ en la subcarpeta proceso-compra/ -->
+    <!-- Rutas con ../ porque este archivo está en la subcarpeta proceso-compra/ -->
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="pago.css">
 </head>
 <body>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ————————————————————————————————————————————————
      INTERRUPTORES INVISIBLES
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+     ———————————————————————————————————————————————— -->
 
 <!-- Checkbox del menÃº hamburguesa -->
 <input type="checkbox" id="toggle-menu">
 
-<!-- Radio para elegir el mÃ©todo de pago.
+<!-- Radio para elegir el método de pago.
      "metodo" es el name que agrupa los dos radios.
-     "tarjeta" estÃ¡ checked por defecto (se selecciona al cargar).
+     "tarjeta" está checked por defecto (se selecciona al cargar).
      Al hacer clic en "paypal", se marca ese radio y el CSS
      oculta el formulario de tarjeta y muestra el de PayPal. -->
 <input type="radio" name="metodo" id="metodo-tarjeta" checked>
 <input type="radio" name="metodo" id="metodo-paypal">
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     HEADER â€” versiÃ³n CON sesiÃ³n
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ————————————————————————————————————————————————
+     HEADER – versión CON sesión
+     ———————————————————————————————————————————————— -->
 <header><div class="contenedor">
 
-        <!-- Logo apunta al home con sesiÃ³n -->
+        <!-- Logo apunta al home con sesión -->
         <a href="../home-sesion.html" class="logo">DARKBOX</a>
 
         <div class="buscador">
@@ -49,7 +50,7 @@
         <nav>
             <button>ðŸ“Š Biblioteca</button>
 
-            <!-- BotÃ³n carrito con badge -->
+            <!-- Botón carrito con badge -->
             <button class="btn-carrito-header" onclick="window.location.href='../carrito.html'">
                 ðŸ›’ Carrito
                 <span id="carrito-badge" class="carrito-badge" style="display:none;">0</span>
@@ -72,7 +73,7 @@
     </div>
 </header>
 
-<!-- MenÃº hamburguesa mÃ³vil -->
+<!-- MenÃº hamburguesa móvil -->
 <div class="menu-movil">
     <button>ðŸ“Š Biblioteca</button>
     <button onclick="window.location.href='../carrito.html'">ðŸ›’ Carrito</button>
@@ -81,9 +82,9 @@
 </div>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ————————————————————————————————————————————————
      MAIN
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+     ———————————————————————————————————————————————— -->
 <main>
 <div class="pago-pagina">
 <div class="contenedor">
@@ -93,40 +94,40 @@
     <!-- Layout: formulario izquierda + resumen derecha -->
     <div class="pago-layout">
 
-        <!-- â”€â”€ COLUMNA IZQUIERDA: mÃ©todo de pago + formulario â”€â”€ -->
+        <!-- â”€â”€ COLUMNA IZQUIERDA: método de pago + formulario â”€â”€ -->
         <div class="pago-izquierda">
 
 
-            <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+            <!-- ————————————————————————————————————————————
                  SECCIÃ“N: MÃ‰TODO DE PAGO
                  Dos opciones: Tarjeta y PayPal.
-                 Cada opciÃ³n es un label que activa su radio.
-                 El CSS resalta la opciÃ³n seleccionada con
+                 Cada opción es un label que activa su radio.
+                 El CSS resalta la opción seleccionada con
                  un borde morado.
-                 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+                 ———————————————————————————————————————————— -->
             <div class="pago-seccion">
-                <h2 class="pago-seccion-titulo">MÃ©todo de Pago</h2>
+                <h2 class="pago-seccion-titulo">Método de Pago</h2>
 
                 <div class="metodos-lista">
 
-                    <!-- OpciÃ³n Tarjeta de CrÃ©dito/DÃ©bito -->
-                    <!-- El label envuelve el contenido visual y estÃ¡ vinculado
+                    <!-- Opción Tarjeta de Crédito/Débito -->
+                    <!-- El label envuelve el contenido visual y está vinculado
                          al radio "metodo-tarjeta" mediante el atributo for -->
                     <label for="metodo-tarjeta" class="metodo-opcion metodo-tarjeta-label">
-                        <!-- Radio visual: el punto se pone morado cuando estÃ¡ activo -->
+                        <!-- Radio visual: el punto se pone morado cuando está activo -->
                         <span class="metodo-radio"></span>
                         <!-- Ãcono tarjeta en SVG -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
                             <line x1="1" y1="10" x2="23" y2="10"/>
                         </svg>
-                        Tarjeta de CrÃ©dito/DÃ©bito
+                        Tarjeta de Crédito/Débito
                     </label>
 
-                    <!-- OpciÃ³n PayPal -->
+                    <!-- Opción PayPal -->
                     <label for="metodo-paypal" class="metodo-opcion metodo-paypal-label">
                         <span class="metodo-radio"></span>
-                        <!-- Ãcono mÃ³vil/PayPal en SVG -->
+                        <!-- Ãcono móvil/PayPal en SVG -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
                             <line x1="12" y1="18" x2="12.01" y2="18"/>
@@ -138,24 +139,24 @@
             </div>
 
 
-            <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+            <!-- ————————————————————————————————————————————
                  FORMULARIO DE TARJETA
-                 Visible por defecto (cuando metodo-tarjeta estÃ¡ activo).
-                 El CSS lo oculta cuando metodo-paypal estÃ¡ marcado.
+                 Visible por defecto (cuando metodo-tarjeta está activo).
+                 El CSS lo oculta cuando metodo-paypal está marcado.
 
                  Validaciones HTML nativas (sin JavaScript):
-                 - minlength / maxlength: lÃ­mite de caracteres
+                 - minlength / maxlength: límite de caracteres
                  - pattern: solo permite ciertos caracteres
                  - required: campo obligatorio
-                 - inputmode: tipo de teclado en mÃ³vil
+                 - inputmode: tipo de teclado en móvil
 
                  IMPORTANTE: estas validaciones son de formato,
                  NO verifican si la tarjeta es real.
-                 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+                 ———————————————————————————————————————————— -->
             <div class="pago-seccion form-tarjeta">
-                <h2 class="pago-seccion-titulo">InformaciÃ³n de Tarjeta</h2>
+                <h2 class="pago-seccion-titulo">Información de Tarjeta</h2>
 
-                <!-- NÃºmero de tarjeta: 16 dÃ­gitos con espacios cada 4 -->
+                <!-- NÃºmero de tarjeta: 16 dígitos con espacios cada 4 -->
                 <div class="campo-grupo">
                     <label class="campo-label" for="num-tarjeta">NÃºmero de Tarjeta</label>
                     <input
@@ -167,16 +168,16 @@
                         inputmode="numeric"
                         autocomplete="cc-number"
                     >
-                    <!-- maxlength="19" = 16 dÃ­gitos + 3 espacios -->
-                    <!-- inputmode="numeric" muestra teclado numÃ©rico en mÃ³vil -->
+                    <!-- maxlength="19" = 16 dígitos + 3 espacios -->
+                    <!-- inputmode="numeric" muestra teclado numérico en móvil -->
                 </div>
 
                 <!-- Fila con dos campos: fecha y CVV -->
                 <div class="campo-fila">
 
-                    <!-- Fecha de expiraciÃ³n: formato MM/AA -->
+                    <!-- Fecha de expiración: formato MM/AA -->
                     <div class="campo-grupo">
-                        <label class="campo-label" for="fecha-exp">Fecha de ExpiraciÃ³n</label>
+                        <label class="campo-label" for="fecha-exp">Fecha de Expiración</label>
                         <input
                             type="text"
                             id="fecha-exp"
@@ -186,10 +187,10 @@
                             inputmode="numeric"
                             autocomplete="cc-exp"
                         >
-                        <!-- maxlength="5" = 2 dÃ­gitos mes + / + 2 dÃ­gitos aÃ±o -->
+                        <!-- maxlength="5" = 2 dígitos mes + / + 2 dígitos año -->
                     </div>
 
-                    <!-- CVV: 3 dÃ­gitos (Visa/Mastercard) o 4 (Amex) -->
+                    <!-- CVV: 3 dígitos (Visa/Mastercard) o 4 (Amex) -->
                     <div class="campo-grupo">
                         <label class="campo-label" for="cvv">CVV</label>
                         <input
@@ -223,17 +224,17 @@
             </div>
 
 
-            <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+            <!-- ————————————————————————————————————————————
                  FORMULARIO DE PAYPAL
                  Oculto por defecto. El CSS lo muestra cuando
-                 metodo-paypal estÃ¡ marcado.
+                 metodo-paypal está marcado.
                  Solo pide el email asociado a la cuenta PayPal.
-                 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+                 ———————————————————————————————————————————— -->
             <div class="pago-seccion form-paypal">
                 <h2 class="pago-seccion-titulo">PayPal</h2>
 
                 <p class="paypal-desc">
-                    SerÃ¡s redirigido a PayPal para completar el pago de forma segura.
+                    Serás redirigido a PayPal para completar el pago de forma segura.
                     Ingresa el correo de tu cuenta PayPal para continuar.
                 </p>
 
@@ -246,13 +247,13 @@
                         placeholder="tu@correo.com"
                         autocomplete="email"
                     >
-                    <!-- type="email" valida automÃ¡ticamente el formato de correo -->
+                    <!-- type="email" valida automáticamente el formato de correo -->
                 </div>
 
             </div>
 
 
-            <!-- BotÃ³n de pago: el texto cambia segÃºn el mÃ©todo activo.
+            <!-- Botón de pago: el texto cambia segÃºn el método activo.
                  El span .btn-pago-texto-tarjeta se muestra con tarjeta,
                  y .btn-pago-texto-paypal se muestra con PayPal.
                  onclick llama a procesarPago() que valida y redirige. -->
@@ -270,7 +271,7 @@
 
             <h2 class="resumen-titulo">Resumen del Pedido</h2>
 
-            <!-- Lista de juegos: carrito.js la llena al cargar la pÃ¡gina -->
+            <!-- Lista de juegos: carrito.js la llena al cargar la página -->
             <div id="resumen-juegos"></div>
 
             <div class="resumen-separador"></div>
@@ -281,7 +282,7 @@
                 <span id="resumen-subtotal">$0</span>
             </div>
 
-            <!-- Impuestos: siempre $0.00 (simulaciÃ³n) -->
+            <!-- Impuestos: siempre $0.00 (simulación) -->
             <div class="resumen-fila">
                 <span>Impuestos</span>
                 <span>$0.00</span>
@@ -315,10 +316,10 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="logo-footer">DARKBOX</div>
-                <p class="footer-desc">Tu plataforma de confianza para juegos digitales. Los mejores tÃ­tulos al mejor precio.</p>
+                <p class="footer-desc">Tu plataforma de confianza para juegos digitales. Los mejores títulos al mejor precio.</p>
             </div>
             <div class="footer-col">
-                <h4>Enlaces RÃ¡pidos</h4>
+                <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="../home-sesion.html">Inicio</a></li>
                     <li><a href="../carrito.html">Carrito</a></li>
@@ -327,8 +328,8 @@
             <div class="footer-col">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">TÃ©rminos y Condiciones</a></li>
-                    <li><a href="#">PolÃ­tica de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -346,11 +347,11 @@
 </footer>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- ————————————————————————————————————————————————
      SCRIPTS
      carrito.js primero (define el objeto Carrito),
-     luego el script de esta pÃ¡gina que lo usa.
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+     luego el script de esta página que lo usa.
+     ———————————————————————————————————————————————— -->
 <script src="../carrito.js"></script>
 <script src="../licencias.js"></script>
 <script src="../compras.js"></script>
@@ -360,12 +361,12 @@
 document.getElementById('footer-email').textContent = 'soporte' + '@' + 'darkbox.com';
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ——————————————————————————————————————————————————————————————
    LLENAR EL RESUMEN DEL PEDIDO
    Lee los juegos del carrito (localStorage via Carrito.obtener())
    y construye la lista visual de la columna derecha.
-   TambiÃ©n actualiza el precio en el botÃ³n de pagar.
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   También actualiza el precio en el botón de pagar.
+   —————————————————————————————————————————————————————————————— */
 function llenarResumen() {
     var lista   = Carrito.obtener();
     var zona    = document.getElementById('resumen-juegos');
@@ -376,7 +377,7 @@ function llenarResumen() {
     var html = lista.map(function(juego) {
         return [
             '<div class="resumen-juego">',
-            /* Imagen pequeÃ±a del juego */
+            /* Imagen pequeña del juego */
             '  <img src="' + juego.imagen + '" alt="' + juego.nombre + '" class="resumen-juego-img">',
             '  <div class="resumen-juego-info">',
             /* Nombre del juego */
@@ -395,23 +396,23 @@ function llenarResumen() {
     document.getElementById('resumen-subtotal').textContent = totalFormateado;
     document.getElementById('resumen-total').textContent    = totalFormateado;
 
-    /* Actualizamos el precio en el botÃ³n de pagar */
+    /* Actualizamos el precio en el botón de pagar */
     if (btnTotal) btnTotal.textContent = totalFormateado;
 }
 
 llenarResumen();
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   FORMATEAR NÃšMERO DE TARJETA
-   Mientras el usuario escribe, agrega automÃ¡ticamente espacios
-   cada 4 dÃ­gitos. Ej: "1234567890123456" â†’ "1234 5678 9012 3456"
+/* ——————————————————————————————————————————————————————————————
+   FORMATEAR NÚMERO DE TARJETA
+   Mientras el usuario escribe, agrega automáticamente espacios
+   cada 4 dígitos. Ej: "1234567890123456" â†’ "1234 5678 9012 3456"
    El evento "input" se dispara cada vez que cambia el contenido.
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   —————————————————————————————————————————————————————————————— */
 var inputTarjeta = document.getElementById('num-tarjeta');
 if (inputTarjeta) {
     inputTarjeta.addEventListener('input', function() {
-        /* Quitamos todo lo que no sea dÃ­gito */
+        /* Quitamos todo lo que no sea dígito */
         var valor = this.value.replace(/\D/g, '');
 
         /* Agrupamos en bloques de 4 con espacios */
@@ -423,18 +424,18 @@ if (inputTarjeta) {
 }
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ——————————————————————————————————————————————————————————————
    FORMATEAR FECHA DE EXPIRACIÃ“N
-   Agrega automÃ¡ticamente la / despuÃ©s del mes.
+   Agrega automáticamente la / después del mes.
    Ej: el usuario escribe "1224" â†’ se muestra "12/24"
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   —————————————————————————————————————————————————————————————— */
 var inputFecha = document.getElementById('fecha-exp');
 if (inputFecha) {
     inputFecha.addEventListener('input', function() {
-        /* Solo dÃ­gitos */
+        /* Solo dígitos */
         var valor = this.value.replace(/\D/g, '');
 
-        /* Si hay mÃ¡s de 2 dÃ­gitos, insertamos la / en posiciÃ³n 2 */
+        /* Si hay más de 2 dígitos, insertamos la / en posición 2 */
         if (valor.length >= 2) {
             this.value = valor.slice(0, 2) + '/' + valor.slice(2, 4);
         } else {
@@ -444,37 +445,37 @@ if (inputFecha) {
 }
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ——————————————————————————————————————————————————————————————
    SOLO DÃGITOS EN CVV
    Evita que el usuario escriba letras en el campo CVV.
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   —————————————————————————————————————————————————————————————— */
 var inputCvv = document.getElementById('cvv');
 if (inputCvv) {
     inputCvv.addEventListener('input', function() {
-        /* Reemplazamos todo lo que no sea dÃ­gito con nada */
+        /* Reemplazamos todo lo que no sea dígito con nada */
         this.value = this.value.replace(/\D/g, '');
     });
 }
 
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ——————————————————————————————————————————————————————————————
    PROCESAR PAGO
-   Se llama al hacer clic en el botÃ³n de pagar.
-   Valida que los campos estÃ©n completos segÃºn el mÃ©todo elegido.
-   Si todo estÃ¡ bien, redirige a compra-exitosa.html.
+   Se llama al hacer clic en el botón de pagar.
+   Valida que los campos estén completos segÃºn el método elegido.
+   Si todo está bien, redirige a compra-exitosa.html.
 
    IMPORTANTE: esta es una SIMULACIÃ“N. No verifica si los datos
-   son reales. Solo comprueba que los campos no estÃ©n vacÃ­os
-   y que tengan el formato mÃ­nimo correcto.
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   son reales. Solo comprueba que los campos no estén vacíos
+   y que tengan el formato mínimo correcto.
+   —————————————————————————————————————————————————————————————— */
 function procesarPago() {
 
-    /* Detectamos cuÃ¡l mÃ©todo estÃ¡ activo leyendo el radio */
+    /* Detectamos cuál método está activo leyendo el radio */
     var esTarjeta = document.getElementById('metodo-tarjeta').checked;
 
     if (esTarjeta) {
         /* â”€â”€ VALIDACIÃ“N TARJETA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-           Comprobamos que cada campo tenga el mÃ­nimo necesario.
+           Comprobamos que cada campo tenga el mínimo necesario.
            .trim() elimina espacios al inicio y al final.
            .replace(/ /g, '') elimina los espacios del nÃºmero. */
 
@@ -483,21 +484,21 @@ function procesarPago() {
         var cvv      = document.getElementById('cvv').value;
         var titular  = document.getElementById('nombre-titular').value.trim();
 
-        /* NÃºmero: exactamente 16 dÃ­gitos */
+        /* NÃºmero: exactamente 16 dígitos */
         if (numero.length < 16) {
-            alert('Por favor ingresa un nÃºmero de tarjeta vÃ¡lido (16 dÃ­gitos).');
-            return; /* return detiene la funciÃ³n, no sigue */
+            alert('Por favor ingresa un nÃºmero de tarjeta válido (16 dígitos).');
+            return; /* return detiene la función, no sigue */
         }
 
         /* Fecha: exactamente formato MM/AA (5 caracteres) */
         if (fecha.length < 5) {
-            alert('Por favor ingresa la fecha de expiraciÃ³n (MM/AA).');
+            alert('Por favor ingresa la fecha de expiración (MM/AA).');
             return;
         }
 
-        /* CVV: entre 3 y 4 dÃ­gitos */
+        /* CVV: entre 3 y 4 dígitos */
         if (cvv.length < 3) {
-            alert('Por favor ingresa el cÃ³digo CVV (3 o 4 dÃ­gitos).');
+            alert('Por favor ingresa el código CVV (3 o 4 dígitos).');
             return;
         }
 
@@ -511,15 +512,15 @@ function procesarPago() {
         /* â”€â”€ VALIDACIÃ“N PAYPAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
         var emailPaypal = document.getElementById('email-paypal').value.trim();
 
-        /* VerificaciÃ³n bÃ¡sica de email: debe tener @ y un punto despuÃ©s */
+        /* Verificación básica de email: debe tener @ y un punto después */
         if (!emailPaypal.includes('@') || emailPaypal.length < 6) {
-            alert('Por favor ingresa un correo de PayPal vÃ¡lido.');
+            alert('Por favor ingresa un correo de PayPal válido.');
             return;
         }
     }
 
     /* â”€â”€ PAGO APROBADO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-       Si llegamos aquÃ­, todos los campos son vÃ¡lidos.
+       Si llegamos aquí, todos los campos son válidos.
        Procesamos la compra y guardamos los juegos en la biblioteca. */
     var compraExitosa = Compras.procesarCompra(Carrito.obtener());
     if (!compraExitosa) {
@@ -527,7 +528,7 @@ function procesarPago() {
         return;
     }
 
-    /* window.location.href redirige a otra pÃ¡gina */
+    /* window.location.href redirige a otra página */
     window.location.href = 'compra-exitosa.html';
 }
 

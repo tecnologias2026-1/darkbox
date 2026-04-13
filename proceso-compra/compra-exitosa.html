@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>DARKBOX â€” Â¡Compra Exitosa!</title>
+    <title>DARKBOX – Â¡Compra Exitosa!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Rajdhani:wght@500;600&family=Material+Icons&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
         </div>
         <nav>
             <button onclick="window.location.href='../biblioteca.html'"><span class="material-icons">library_books</span> Biblioteca</button>
-            <!-- Badge en 0 porque el carrito se vaciÃ³ al comprar -->
+            <!-- Badge en 0 porque el carrito se vació al comprar -->
             <button class="btn-carrito-header" onclick="window.location.href='../carrito.html'">
                 ðŸ›’ Carrito
                 <span id="carrito-badge" class="carrito-badge" style="display:none;">0</span>
@@ -53,40 +54,40 @@
     <a href="../home.html" class="btn-salir-movil">â†ª Salir</a>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     MAIN â€” Pantalla de compra exitosa
-     Esta pÃ¡gina es muy simple: solo un Ã­cono de check,
+<!-- ————————————————————————————————————————————————
+     MAIN – Pantalla de compra exitosa
+     Esta página es muy simple: solo un ícono de check,
      un mensaje y dos botones. No necesita carrito.js
      porque el carrito ya fue vaciado en pago.html.
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+     ———————————————————————————————————————————————— -->
 <main>
 <div class="exitosa-pagina">
 
     <!-- Ãcono de check verde animado -->
     <div class="exitosa-icono">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <!-- CÃ­rculo exterior -->
+            <!-- Círculo exterior -->
             <circle cx="12" cy="12" r="10"/>
             <!-- Palomita / check -->
             <polyline points="9 12 11 14 15 10"/>
         </svg>
     </div>
 
-    <!-- TÃ­tulo y mensaje -->
+    <!-- Título y mensaje -->
     <h1 class="exitosa-titulo">Â¡Compra Exitosa!</h1>
     <p class="exitosa-mensaje">
         Tus juegos han sido agregados a tu biblioteca y ya puedes jugarlos.
     </p>
 
-    <!-- Dos botones de acciÃ³n -->
+    <!-- Dos botones de acción -->
     <div class="exitosa-botones">
 
-        <!-- BotÃ³n principal: Ver Biblioteca -->
+        <!-- Botón principal: Ver Biblioteca -->
         <a href="../biblioteca.html" class="btn-biblioteca">
             Ver Mi Biblioteca
         </a>
 
-        <!-- BotÃ³n secundario: Volver a la tienda -->
+        <!-- Botón secundario: Volver a la tienda -->
         <a href="../home-sesion.html" class="btn-tienda">
             Volver a la Tienda
         </a>

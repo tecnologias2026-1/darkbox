@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>DARKBOX â€” Biblioteca</title>
+    <title>DARKBOX – Biblioteca</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Rajdhani:wght@500;600&family=Material+Icons&display=swap" rel="stylesheet">
@@ -12,14 +13,14 @@
 </head>
 <body>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     INTERRUPTOR MENÃš MÃ“VIL
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ————————————————————————————————————————————————
+     INTERRUPTOR MENÚ MÓVIL
+     ———————————————————————————————————————————————— -->
 <input type="checkbox" id="toggle-menu">
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     HEADER â€” versiÃ³n CON sesiÃ³n
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ————————————————————————————————————————————————
+     HEADER – versión CON sesión
+     ———————————————————————————————————————————————— -->
 <header><div class="contenedor">
         <a href="home-sesion.html" class="logo">DARKBOX</a>
 
@@ -31,7 +32,7 @@
         <nav>
             <button class="btn-biblioteca-activo" onclick="window.location.href='biblioteca.html'"><span class="material-icons">library_books</span> Biblioteca</button>
 
-            <!-- BotÃ³n carrito con badge de cantidad -->
+            <!-- Botón carrito con badge de cantidad -->
             <a href="carrito.html" class="btn-carrito-header">
                 <span class="material-icons">shopping_cart</span> Carrito
                 <span id="carrito-badge" class="carrito-badge" style="display:none;">0</span>
@@ -39,7 +40,7 @@
 
             <span><span class="material-icons">person</span> Usuario</span>
 
-            <!-- Salir: borra la sesiÃ³n y va al home sin sesiÃ³n -->
+            <!-- Salir: borra la sesión y va al home sin sesión -->
             <a href="home.html" class="btn-salir">
                 <span class="material-icons">logout</span>
             </a>
@@ -51,7 +52,7 @@
     </div>
 </header>
 
-<!-- MenÃº mÃ³vil -->
+<!-- MenÃº móvil -->
 <div class="menu-movil">
     <button class="btn-biblioteca-activo" onclick="window.location.href='biblioteca.html'"><span class="material-icons">library_books</span> Biblioteca</button>
     <a href="carrito.html"><span class="material-icons">shopping_cart</span> Carrito</a>
@@ -59,9 +60,9 @@
     <a href="home.html" class="btn-salir-movil"><span class="material-icons">logout</span> Salir</a>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     MAIN â€” Biblioteca de juegos
-     â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- ————————————————————————————————————————————————
+     MAIN – Biblioteca de juegos
+     ———————————————————————————————————————————————— -->
 <main>
     <div class="biblioteca-pagina">
         <div class="contenedor">
@@ -76,12 +77,12 @@
 
                 <!-- Grid de juegos -->
                 <div class="biblioteca-grid" id="biblioteca-grid">
-                    <!-- Los juegos se cargan aquÃ­ con JavaScript -->
+                    <!-- Los juegos se cargan aquí con JavaScript -->
                 </div>
 
-                <!-- Panel lateral con estadÃ­sticas -->
+                <!-- Panel lateral con estadísticas -->
                 <div class="biblioteca-resumen">
-                    <h2>EstadÃ­sticas</h2>
+                    <h2>Estadísticas</h2>
                     <div class="resumen-stats">
                         <div class="stat">
                             <span class="stat-numero" id="total-juegos">0</span>
@@ -93,24 +94,24 @@
                         </div>
                         <div class="stat">
                             <span class="stat-numero" id="ultima-compra">-</span>
-                            <span class="stat-label">Ãšltima compra</span>
+                            <span class="stat-label">Última compra</span>
                         </div>
                     </div>
 
                     <div class="resumen-acciones">
-                        <a href="home-sesion.html" class="btn-explorar">Explorar mÃ¡s juegos</a>
+                        <a href="home-sesion.html" class="btn-explorar">Explorar más juegos</a>
                         <a href="carrito.html" class="btn-ver-carrito">Ver carrito</a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Estado vacÃ­o -->
+            <!-- Estado vacío -->
             <div class="biblioteca-vacia" id="biblioteca-vacia" style="display: none;">
                 <div class="vacia-contenido">
                     <span class="material-icons vacia-icono">library_add</span>
                     <h3>AÃºn no tienes juegos</h3>
-                    <p>Â¡Explora nuestra colecciÃ³n y agrega juegos a tu carrito!</p>
+                    <p>Â¡Explora nuestra colección y agrega juegos a tu carrito!</p>
                     <a href="home-sesion.html" class="btn-explorar-vacia">Explorar juegos</a>
                 </div>
             </div>
