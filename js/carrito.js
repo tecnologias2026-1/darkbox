@@ -43,8 +43,14 @@ var Carrito = (function () {
        Si no hay nada guardado aún, devuelve un array vacío []. */
     function leer() {
         var datos = localStorage.getItem(CLAVE);
-        /* datos puede ser null (primera vez) o un JSON string */
-        return datos ? JSON.parse(datos) : [];
+        var lista = datos ? JSON.parse(datos) : [];
+
+        // Filtrar juegos inválidos (sin id o nombre)
+        lista = lista.filter(function(juego) {
+            return juego && juego.id && juego.nombre && juego.precio;
+        });
+
+        return lista;
     }
 
     /* Guardar el array en localStorage.
