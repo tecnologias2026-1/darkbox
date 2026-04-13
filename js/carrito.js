@@ -142,7 +142,10 @@ var Carrito = (function () {
            Convierte un número (ej: 149000) en texto con formato (ej: "$149.000").
            toLocaleString('es-CO') aplica el formato de Colombia (punto como separador). */
         formatearPrecio: function (numero) {
-            return '$' + numero.toLocaleString('es-CO');
+            // Asegurar que es un número
+            var num = Number(numero);
+            if (isNaN(num)) num = 0;
+            return '$' + num.toLocaleString('es-CO');
         },
 
 
