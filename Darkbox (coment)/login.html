@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>DARKBOX — Iniciar Sesión</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>DARKBOX â€” Iniciar SesiÃ³n</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
@@ -10,8 +11,7 @@
 </head>
 <body>
  
-    <header>
-        <div class="contenedor">
+    <header><div class="contenedor">
             <a href="home.html" class="logo">DARKBOX</a>
             <div class="buscador">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -20,7 +20,7 @@
                 </svg>
                 <input type="text" placeholder="Buscar juegos...">
             </div>
-            <button class="btn-iniciar">Iniciar Sesión</button>
+            <button class="btn-iniciar">Iniciar SesiÃ³n</button>
         </div>
     </header>
  
@@ -29,10 +29,10 @@
  
             <div class="login-header">
                 <h1 class="logo-grande">DARKBOX</h1>
-                <p class="subtitulo">Inicia sesión para continuar</p>
+                <p class="subtitulo">Inicia sesiÃ³n para continuar</p>
             </div>
  
-            <!-- onsubmit llama a validarLogin cuando el usuario envía el formulario -->
+            <!-- onsubmit llama a validarLogin cuando el usuario envÃ­a el formulario -->
             <form onsubmit="return validarLogin(event)" class="form-login">
  
                 <div class="campo">
@@ -47,30 +47,30 @@
                 </div>
  
                 <div class="campo">
-                    <label for="password">Contraseña</label>
+                    <label for="password">ContraseÃ±a</label>
                     <div class="input-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
-                        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+                        <input type="password" id="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" autocomplete="current-password">
                     </div>
                 </div>
  
                 <!-- Mensaje de error: oculto por defecto, aparece si las credenciales son incorrectas -->
-                <p class="error-msg" id="errorMsg">Email o contraseña incorrectos.</p>
+                <p class="error-msg" id="errorMsg">Email o contraseÃ±a incorrectos.</p>
  
-                <button type="submit" class="btn-submit">Iniciar Sesión</button>
+                <button type="submit" class="btn-submit">Iniciar SesiÃ³n</button>
  
-                <a href="#" class="link-registro">¿No tienes cuenta? Regístrate</a>
+                <a href="#" class="link-registro">Â¿No tienes cuenta? RegÃ­strate</a>
  
             </form>
  
-            <!-- Los spans están vacíos, JavaScript los llena al cargar la página -->
+            <!-- Los spans estÃ¡n vacÃ­os, JavaScript los llena al cargar la pÃ¡gina -->
             <div class="cuenta-prueba">
                 <p class="prueba-titulo">Cuenta de prueba:</p>
                 <p>Email: <span id="txt-email"></span></p>
-                <p>Contraseña: <span id="txt-pass"></span></p>
+                <p>ContraseÃ±a: <span id="txt-pass"></span></p>
             </div>
  
         </div>
@@ -78,7 +78,7 @@
  
     <script>
         /* Llenamos los spans con las credenciales construyendo el texto en partes.
-           Así ningún servicio externo puede leerlo en el HTML y ocultarlo. */
+           AsÃ­ ningÃºn servicio externo puede leerlo en el HTML y ocultarlo. */
         var p1 = 'dem';
         var p2 = 'o';
         var p3 = 'darkbox';
@@ -91,7 +91,7 @@
         var PASS_OK  = 'demo' + '123';
  
         function validarLogin(event) {
-            /* Evita que el formulario recargue la página al enviarse */
+            /* Evita que el formulario recargue la pÃ¡gina al enviarse */
             event.preventDefault();
  
             var email    = document.getElementById('email').value.trim();
@@ -112,3 +112,7 @@
  
 </body>
 </html>
+
+
+
+
