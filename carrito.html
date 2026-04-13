@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>DARKBOX — Carrito de Compras</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,20 +12,20 @@
     <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
- 
+
 <!-- ════════════════════════════════════════════════
      INTERRUPTOR MENÚ MÓVIL
      ════════════════════════════════════════════════ -->
 <input type="checkbox" id="toggle-menu">
- 
- 
+
+
 <!-- ════════════════════════════════════════════════
      HEADER — versión CON sesión
      (el carrito solo es accesible con sesión iniciada)
      ════════════════════════════════════════════════ -->
 <header><div class="contenedor">
         <a href="home-sesion.html" class="logo">DARKBOX</a>
- 
+
         <div class="buscador">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"/>
@@ -33,7 +33,7 @@
             </svg>
             <input type="text" placeholder="Buscar juegos...">
         </div>
- 
+
         <nav>
             <button onclick="window.location.href='biblioteca.html'">📊 Biblioteca</button>
 
@@ -46,9 +46,9 @@
                      Oculto por defecto (display:none), carrito.js lo muestra. -->
                 <span id="carrito-badge" class="carrito-badge" style="display:none;">0</span>
             </button>
- 
+
             <span>👤 Usuario</span>
- 
+
             <!-- Salir: borra la sesión y va al home sin sesión -->
             <a href="home.html" class="btn-salir">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -58,13 +58,13 @@
                 </svg>
             </a>
         </nav>
- 
+
         <label for="toggle-menu" class="hamburguesa">
             <span></span><span></span><span></span>
         </label>
     </div>
 </header>
- 
+
 <!-- Menú móvil -->
 <div class="menu-movil">
     <button onclick="window.location.href='biblioteca.html'">📊 Biblioteca</button>
@@ -72,20 +72,20 @@
     <span>👤 Usuario</span>
     <a href="home-sesion.html" class="btn-salir-movil">↪ Salir</a>
 </div>
- 
- 
+
+
 <!-- ════════════════════════════════════════════════
      MAIN — Contenido del carrito
      ════════════════════════════════════════════════ -->
 <main>
 <div class="carrito-pagina">
 <div class="contenedor">
- 
+
     <h1 class="carrito-titulo">Carrito de Compras</h1>
- 
+
     <!-- LAYOUT: lista de juegos a la izquierda, resumen a la derecha -->
     <div class="carrito-layout">
- 
+
         <!-- ── LISTA DE JUEGOS ──────────────────────────────────
              Esta zona la construye carrito.js con JavaScript.
              Si el carrito está vacío, muestra el mensaje vacío.
@@ -93,43 +93,43 @@
         <div class="carrito-lista" id="carrito-lista">
             <!-- carrito.js llena este div al cargar la página -->
         </div>
- 
- 
-        <!-- ── RESUMEN DE COMPRA ────────────────────────────────
+
+
+        <!-- ──RESUMEN DE COMPRA ────────────────────────────────
              Panel lateral con el total.
              Los números los actualiza carrito.js. -->
         <div class="carrito-resumen">
             <h2 class="resumen-titulo">Resumen</h2>
- 
+
             <div class="resumen-fila">
                 <!-- "Juegos (N)" → carrito.js actualiza el número -->
                 <span id="resumen-cantidad">Juegos (0)</span>
                 <span id="resumen-subtotal">$0</span>
             </div>
- 
-            
- 
+
+
+
             <div class="resumen-separador"></div>
- 
+
             <div class="resumen-fila resumen-total">
                 <span>Total</span>
                 <!-- carrito.js actualiza este número -->
                 <span id="resumen-total">$0</span>
             </div>
- 
+
             <!-- onclick redirige a la carpeta proceso-compra/ donde está pago.html -->
             <button class="btn-proceder" onclick="window.location.href='proceso-compra/pago.html'">Proceder al Pago</button>
- 
+
             <a href="home-sesion.html" class="btn-continuar">Continuar Comprando</a>
         </div>
- 
+
     </div>
- 
+
 </div>
 </div>
 </main>
- 
- 
+
+
 <!-- ════════════════════════════════════════════════
      FOOTER
      ════════════════════════════════════════════════ -->
@@ -150,7 +150,7 @@
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="home-sesion.html">Inicio</a></li>
-                    <li><a href="#">Mi Biblioteca</a></li>
+                    <li><a href="biblioteca.html">Mi Biblioteca</a></li>
                     <li><a href="carrito.html">Carrito</a></li>
                     <li><a href="#">Novedades</a></li>
                 </ul>
@@ -181,8 +181,7 @@
         </div>
     </div>
 </footer>
- 
- 
+
 <!-- ════════════════════════════════════════════════
      SCRIPTS
      Orden importante: carrito.js primero (define Carrito),
@@ -190,105 +189,67 @@
      ════════════════════════════════════════════════ -->
 <script src="js/carrito.js"></script>
 <script>
-/* ── EMAIL DEL FOOTER ────────────────────────────────────────── */
+console.log('📦 carrito.html cargado');
+console.log('Carrito disponible:', typeof Carrito !== 'undefined' ? '✓' : '✗');
+console.log('localStorage["darkbox_carrito"]:', localStorage.getItem('darkbox_carrito'));
+
+// Email footer
 document.getElementById('footer-email').textContent = 'soporte' + '@' + 'darkbox.com';
- 
- 
-/* ── RENDERIZAR EL CARRITO ───────────────────────────────────── */
-/*
-   Esta función lee el carrito desde localStorage (a través de Carrito.obtener())
-   y construye el HTML de cada tarjeta de juego y el resumen de precios.
-   Se llama al cargar la página y cada vez que se elimina un juego.
-*/
+
 function renderizarCarrito() {
+    console.log('🔄 Renderizando carrito...');
+
     var lista    = Carrito.obtener();
+    console.log('Total juegos en carrito:', lista.length);
+    console.log('Datos del carrito:', lista);
+
     var zona     = document.getElementById('carrito-lista');
     var cantidad = document.getElementById('resumen-cantidad');
     var subtotal = document.getElementById('resumen-subtotal');
     var totalEl  = document.getElementById('resumen-total');
- 
-    /* ── CARRITO VACÍO ─────────────────────────────────────── */
+
     if (lista.length === 0) {
-        zona.innerHTML = [
-            '<div class="carrito-vacio">',
-            '  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">',
-            '    <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>',
-            '    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',
-            '  </svg>',
-            '  <p>Tu carrito está vacío</p>',
-            '  <a href="home-sesion.html" class="btn-vacio">Explorar juegos</a>',
-            '</div>'
-        ].join('\n');
- 
-        /* Actualizar resumen con ceros */
+        console.log('Carrito vacío');
+        zona.innerHTML = '<div class="carrito-vacio"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Tu carrito está vacío</p><a href="home-sesion.html" class="btn-vacio">Explorar juegos</a></div>';
         cantidad.textContent = 'Juegos (0)';
         subtotal.textContent = '$0';
-        totalEl.textContent  = '$0';
+        totalEl.textContent = '$0';
         return;
     }
- 
-    /* ── CARRITO CON JUEGOS ────────────────────────────────── */
-    /*
-       Por cada juego en el array construimos una tarjeta HTML.
-       El botón de eliminar llama a eliminarJuego(id) con el id del juego.
-    */
+
     var html = lista.map(function (juego) {
-        return [
-            '<div class="carrito-item" id="item-' + juego.id + '">',
-            /* Imagen del juego */
-            '  <img src="' + juego.imagen + '" alt="' + juego.nombre + '" class="item-imagen">',
-            /* Información del juego */
-            '  <div class="item-info">',
-            '    <p class="item-nombre">' + juego.nombre + '</p>',
-            '    <p class="item-genero">' + juego.genero + '</p>',
-            '    <p class="item-precio">' + Carrito.formatearPrecio(juego.precio) + '</p>',
-            '  </div>',
-            /* Botón eliminar: llama a eliminarJuego con el id del juego */
-            '  <button class="item-eliminar" onclick="eliminarJuego(\'' + juego.id + '\')" aria-label="Eliminar ' + juego.nombre + '">',
-            '    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">',
-            '      <polyline points="3 6 5 6 21 6"/>',
-            '      <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>',
-            '      <path d="M10 11v6"/><path d="M14 11v6"/>',
-            '      <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>',
-            '    </svg>',
-            '  </button>',
-            '</div>'
-        ].join('\n');
+        return '<div class="carrito-item" id="item-' + juego.id + '"><img src="' + juego.imagen + '" alt="' + juego.nombre + '" class="item-imagen"><div class="item-info"><p class="item-nombre">' + juego.nombre + '</p><p class="item-genero">' + juego.genero + '</p><p class="item-precio">' + Carrito.formatearPrecio(juego.precio) + '</p></div><button class="item-eliminar" onclick="eliminarJuego(\'' + juego.id + '\')" aria-label="Eliminar ' + juego.nombre + '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></button></div>';
     }).join('\n');
- 
+
     zona.innerHTML = html;
- 
-    /* ── ACTUALIZAR RESUMEN ────────────────────────────────── */
+
     var totalNum = Carrito.total();
     cantidad.textContent = 'Juegos (' + lista.length + ')';
     subtotal.textContent = Carrito.formatearPrecio(totalNum);
-    totalEl.textContent  = Carrito.formatearPrecio(totalNum);
+    totalEl.textContent = Carrito.formatearPrecio(totalNum);
+    console.log('✅ Carrito renderizado con éxito');
 }
- 
- 
-/* ── ELIMINAR UN JUEGO DEL CARRITO ──────────────────────────── */
-/*
-   Llamada desde el botón de basura de cada tarjeta.
-   Elimina el juego de localStorage y vuelve a renderizar.
-*/
+
 function eliminarJuego(id) {
+    console.log('🗑️ Eliminando juego:', id);
     Carrito.eliminar(id);
     renderizarCarrito();
-    /* actualizarBadge ya lo llama Carrito.eliminar() internamente */
 }
- 
- 
-/* ── INICIALIZAR ─────────────────────────────────────────────── */
-/* Renderizamos el carrito al cargar la página */
+
+// Comando para debugging
+window.verCarrito = function() {
+    console.log('📋 Contenido actual del carrito:');
+    console.log(Carrito.obtener());
+    console.log('Total:', Carrito.total());
+};
+
+// Inicializar
 document.addEventListener('DOMContentLoaded', function () {
+    console.log('✅ DOM cargado');
     renderizarCarrito();
 });
 </script>
- 
+
 </body>
 </html>
 <script src="js/buscar.js"></script>
-
-
-
-
