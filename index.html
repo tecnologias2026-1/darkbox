@@ -1029,10 +1029,10 @@
                          Los <a> son enlaces que al hacer hover cambian a morado.
                          En el futuro cambia href="#" por la ruta de cada página. -->
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Mi Biblioteca</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">Novedades</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="login.html">Mi Biblioteca</a></li>
+                        <li><a href="#juegos-momento">Ofertas</a></li>
+                        <li><a href="#actualizados">Novedades</a></li>
                     </ul>
                 </div>
 
@@ -1058,7 +1058,7 @@
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
-                        <span id="footer-email-homehtml"></span>
+                        <span id="footer-email"></span>
                     </div>
 
                     <div class="contacto-item">
@@ -1080,6 +1080,52 @@
         </div>
     </footer>
 
+    <script src="carrito.js"></script>
     <script src="buscar.js"></script>
+    <script>
+    // Llenar email del footer
+    document.addEventListener('DOMContentLoaded', function () {
+        var emailEl = document.getElementById('footer-email');
+        if (emailEl) {
+            emailEl.textContent = 'soporte' + '@' + 'darkbox.com';
+        }
+
+        // Manejar clics en botones "Agregar" del index
+        var botonesAgregar = document.querySelectorAll('.btn-agregar');
+        botonesAgregar.forEach(function(boton) {
+            boton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Obtener datos del juego desde la tarjeta más cercana
+                var tarjeta = this.closest('.tarjeta');
+                var nombre = tarjeta.querySelector('.nombre').textContent;
+                var genero = tarjeta.querySelector('.genero').textContent;
+                var precio = tarjeta.querySelector('.precio').textContent.replace(/[^0-9]/g, '');
+                var imagen = tarjeta.querySelector('img').src;
+
+                // Crear ID único basado en el nombre
+                var id = nombre.toLowerCase().replace(/[^a-z0-9]/g, '-');
+
+                // Agregar al carrito
+                var juego = {
+                    id: id,
+                    nombre: nombre,
+                    genero: genero,
+                    precio: parseInt(precio),
+                    imagen: imagen
+                };
+
+                var agregado = Carrito.agregar(juego);
+
+                if (agregado) {
+                    Carrito.notificar('✓ ' + nombre + ' agregado al carrito', 'ok');
+                } else {
+                    Carrito.notificar('⚠ ' + nombre + ' ya está en el carrito', 'aviso');
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
