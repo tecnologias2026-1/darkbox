@@ -1116,7 +1116,7 @@
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
-                        <span id="footer-email-home-sesionhtml"></span>
+                        <span id="footer-email"></span>
                     </div>
  
                     <div class="contacto-item">
@@ -1148,8 +1148,88 @@
      al cargar la página, mostrando cuántos juegos hay en el carrito. -->
 <script src="js/carrito.js"></script>
 <script>
-    /* Email del footer construido en partes para evitar spam bots */
-    document.getElementById('footer-email-home-sesionhtml').textContent = 'soporte' + '@' + 'darkbox.com';
+    document.addEventListener('DOMContentLoaded', function () {
+        // Email del footer
+        var emailEl = document.getElementById('footer-email');
+        if (emailEl) {
+            emailEl.textContent = 'soporte' + '@' + 'darkbox.com';
+        }
+
+        // Manejar clics en botones "Agregar"
+        var agregarHandler = function(e) {
+            if (e.target.matches('.btn-agregar')) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                try {
+                    var boton = e.target;
+                    var tarjeta = boton.closest('.tarjeta');
+
+                    if (!tarjeta) {
+                        console.warn('No se encontró elemento .tarjeta');
+                        return;
+                    }
+
+                    var nombreEl = tarjeta.querySelector('.nombre');
+                    var generoEl = tarjeta.querySelector('.genero');
+                    var precioEl = tarjeta.querySelector('.precio');
+                    var imagenEl = tarjeta.querySelector('img');
+
+                    if (!nombreEl || !generoEl || !precioEl || !imagenEl) {
+                        console.error('Faltan elementos en tarjeta');
+                        return;
+                    }
+
+                    var nombre = nombreEl.textContent.trim();
+                    var genero = generoEl.textContent.trim();
+                    var precioText = precioEl.textContent.trim();
+                    var imagen = imagenEl.src;
+
+                    var precio = parseInt(precioText.replace(/[^0-9]/g, '') || '0');
+
+                    console.log('Datos extraídos:', { nombre, genero, precio, imagen: imagen.substring(0, 50) });
+
+                    if (!nombre || precio === 0 || !imagen) {
+                        console.error('Datos inválidos:', { nombre, precio, imagen });
+                        Carrito.notificar('Error: no se pudo extraer datos del juego', 'aviso');
+                        return;
+                    }
+
+                    var id = nombre.toLowerCase()
+                        .replace(/™/g, '')
+                        .replace(/[^a-z0-9]/g, '-')
+                        .replace(/-+/g, '-')
+                        .replace(/^-|-$/g, '');
+
+                    var juego = {
+                        id: id,
+                        nombre: nombre,
+                        genero: genero,
+                        precio: precio,
+                        imagen: imagen
+                    };
+
+                    console.log('Juego a agregar:', juego);
+
+                    var agregado = Carrito.agregar(juego);
+
+                    if (agregado) {
+                        Carrito.notificar('✓ ' + nombre + ' agregado al carrito', 'ok');
+                        console.log('✓ Juego agregado correctamente');
+                    } else {
+                        Carrito.notificar('⚠ ' + nombre + ' ya está en el carrito', 'aviso');
+                        console.log('⚠ El juego ya estaba agregado');
+                    }
+                } catch (error) {
+                    console.error('Error en agregar:', error);
+                    Carrito.notificar('Error: ' + error.message, 'aviso');
+                }
+            }
+        };
+
+        document.addEventListener('click', agregarHandler, true);
+        console.log('✓ Event listeners configurados en home-sesion');
+    });
 </script>
 
 </body>

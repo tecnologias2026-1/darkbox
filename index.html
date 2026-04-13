@@ -1084,67 +1084,94 @@
     <script src="js/carrito.js"></script>
     <script src="js/buscar.js"></script>
     <script>
-    // Llenar email del footer
     document.addEventListener('DOMContentLoaded', function () {
+        // Llenar email del footer
         var emailEl = document.getElementById('footer-email');
         if (emailEl) {
             emailEl.textContent = 'soporte' + '@' + 'darkbox.com';
         }
 
         // Manejar clics en botones "Agregar" del index
-        // Usar delegación de eventos para capturar clics en botones dinámicos
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('btn-agregar')) {
+        // Delegación de eventos a nivel de documento
+        var agregarHandler = function(e) {
+            // Verificar que el click sea en un botón con clase .btn-agregar
+            if (e.target.matches('.btn-agregar')) {
                 e.preventDefault();
                 e.stopPropagation();
 
-                // Obtener datos del juego desde la tarjeta más cercana
-                var boton = e.target;
-                var tarjeta = boton.closest('.tarjeta');
+                try {
+                    var boton = e.target;
+                    var tarjeta = boton.closest('.tarjeta');
 
-                if (!tarjeta) {
-                    console.error('No se encontró .tarjeta');
-                    return;
-                }
+                    if (!tarjeta) {
+                        console.warn('No se encontró elemento .tarjeta');
+                        return;
+                    }
 
-                var nombre = tarjeta.querySelector('.nombre').textContent.trim();
-                var genero = tarjeta.querySelector('.genero').textContent.trim();
-                var precioText = tarjeta.querySelector('.precio').textContent.trim();
-                var imagen = tarjeta.querySelector('img').src;
+                    // Extraer datos con validación
+                    var nombreEl = tarjeta.querySelector('.nombre');
+                    var generoEl = tarjeta.querySelector('.genero');
+                    var precioEl = tarjeta.querySelector('.precio');
+                    var imagenEl = tarjeta.querySelector('img');
 
-                // Extraer precio numérico (saca solo números)
-                var precio = parseInt(precioText.replace(/[^0-9]/g, ''));
+                    if (!nombreEl || !generoEl || !precioEl || !imagenEl) {
+                        console.error('Faltan elementos en tarjeta');
+                        return;
+                    }
 
-                if (!nombre || !precio || !imagen) {
-                    console.error('Datos incompletos:', {nombre, precio, imagen});
-                    return;
-                }
+                    var nombre = nombreEl.textContent.trim();
+                    var genero = generoEl.textContent.trim();
+                    var precioText = precioEl.textContent.trim();
+                    var imagen = imagenEl.src;
 
-                // Crear ID único basado en el nombre
-                var id = nombre.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                    // Limpiar precio: "$149.000" → 149000
+                    var precio = parseInt(precioText.replace(/[^0-9]/g, '') || '0');
 
-                // Agregar al carrito
-                var juego = {
-                    id: id,
-                    nombre: nombre,
-                    genero: genero,
-                    precio: precio,
-                    imagen: imagen
-                };
+                    console.log('Datos extraídos:', { nombre, genero, precio, imagen: imagen.substring(0, 50) });
 
-                console.log('Agregando juego:', juego);
+                    if (!nombre || precio === 0 || !imagen) {
+                        console.error('Datos inválidos:', { nombre, precio, imagen });
+                        Carrito.notificar('Error: no se pudo extraer datos del juego', 'aviso');
+                        return;
+                    }
 
-                var agregado = Carrito.agregar(juego);
+                    // Crear ID único
+                    var id = nombre.toLowerCase()
+                        .replace(/™/g, '')
+                        .replace(/[^a-z0-9]/g, '-')
+                        .replace(/-+/g, '-')
+                        .replace(/^-|-$/g, '');
 
-                if (agregado) {
-                    Carrito.notificar('✓ ' + nombre + ' agregado al carrito', 'ok');
-                    console.log('Juego agregado exitosamente');
-                } else {
-                    Carrito.notificar('⚠ ' + nombre + ' ya está en el carrito', 'aviso');
-                    console.log('Juego ya estaba en carrito');
+                    var juego = {
+                        id: id,
+                        nombre: nombre,
+                        genero: genero,
+                        precio: precio,
+                        imagen: imagen
+                    };
+
+                    console.log('Juego a agregar:', juego);
+
+                    var agregado = Carrito.agregar(juego);
+
+                    if (agregado) {
+                        Carrito.notificar('✓ ' + nombre + ' agregado al carrito', 'ok');
+                        console.log('✓ Juego agregado correctamente');
+                    } else {
+                        Carrito.notificar('⚠ ' + nombre + ' ya está en el carrito', 'aviso');
+                        console.log('⚠ El juego ya estaba agregado');
+                    }
+                } catch (error) {
+                    console.error('Error en agregar:', error);
+                    Carrito.notificar('Error: ' + error.message, 'aviso');
                 }
             }
-        }, true); // Usar captura para que sea más fiable
+        };
+
+        // Agregar listener con captura
+        document.addEventListener('click', agregarHandler, true);
+
+        console.log('✓ Event listeners configurados');
     });
     </script>
 </body>
